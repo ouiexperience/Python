@@ -1,0 +1,23 @@
+Creating an audio tour of paintings
+
+paintings = ['The Two Fridas', 'My Dress Hangs Here', 'Tree of Hope', 'Self Portrait With Monkeys']
+dates = [1939, 1933, 1946, 1940]
+paintings = list(zip(paintings, dates))
+print(paintings)
+[('The Two Fridas', 1939), ('My Dress Hangs Here', 1933), ('Tree of Hope', 1946), ('Self Portrait With Monkeys', 1940)]
+paintings.append(('The Broken Column', 1944))
+paintings.append(('The Wounded Deer', 1946))
+paintings.append(('Me and My Doll', 1937))
+print (paintings)
+[('The Two Fridas', 1939), ('My Dress Hangs Here', 1933), ('Tree of Hope', 1946), ('Self Portrait With Monkeys', 1940), ('The Broken Column', 1944), ('The Broken Column', 1944), ('The Broken Column', 1944), ('The Wounded Deer', 1946), ('Me and My Doll', 1937)]
+size =len(paintings)
+print(size)
+9
+audio_tour_number = range(1,size+1)
+print (audio_tour_number)
+print (list(audio_tour_number))
+range(1, 10)
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+master_list = list(zip(paintings, audio_tour_number))
+print (master_list)
+[(('The Two Fridas', 1939), 1), (('My Dress Hangs Here', 1933), 2), (('Tree of Hope', 1946), 3), (('Self Portrait With Monkeys', 1940), 4), (('The Broken Column', 1944), 5), (('The Broken Column', 1944), 6), (('The Broken Column', 1944), 7), (('The Wounded Deer', 1946), 8), (('Me and My Doll', 1937), 9)]

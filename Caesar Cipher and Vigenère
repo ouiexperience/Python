@@ -76,18 +76,18 @@ for i in range(1,26):
 #vigenere cipher
 
 def decode_vigenere (message, keyword):
-    final_keyword =""
+    keyword_letter =""
     pointer = 0
     for i in range(0, len (message)):
         if message[i] in string_alphabet:
-            final_keyword += keyword[pointer]
+            keyword_letter += keyword[pointer]
             pointer = (pointer +1)% len(keyword)
         else:
-            final_keyword += message[i]
+            keyword_letter += message[i]
     real_message =""              
     for i in range(0,len(message)):
         if message [i] in alphabet:
-            real_m = string_alphabet.find(message[i]) - string_alphabet.find(final_keyword[i])
+            real_m = string_alphabet.find(message[i]) - string_alphabet.find(keyword_letter[i])
             real_message += string_alphabet[real_m %26]
         else:
             real_message += message[i]
@@ -99,22 +99,21 @@ new_message =" dfc aruw fsti gr vjtwhr wznj? vmph otis! cbx swv jipreneo uhllj k
 keyword ="friends"
 print(decode_vigenere (new_message, keyword))
 
-
 # code in vigenere
 
 def code_vigenere (message, keyword):
-    final_keyword =""
+    keyword_letter =""
     pointer = 0
     for i in range(0, len (message)):
         if message[i] in string_alphabet:
-            final_keyword += keyword[pointer]
+            keyword_letter += keyword[pointer]
             pointer = (pointer +1)% len(keyword)
         else:
-            final_keyword += message[i]
+            keyword_letter += message[i]
     real_message =""              
     for i in range(0,len(message)):
         if message [i] in alphabet:
-            real_m = string_alphabet.find(message[i]) + string_alphabet.find(final_keyword[i])
+            real_m = string_alphabet.find(message[i]) + string_alphabet.find(keyword_letter[i])
             real_message += string_alphabet[real_m %26]
         else:
             real_message += message[i]
